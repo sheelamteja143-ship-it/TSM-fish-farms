@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Admin Panel</title>
+
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body class="admin-page">
+
+<div class="admin-header">
+
+  <h1>TSM Fish Farms Admin</h1>
+
+  <button onclick="logout()" class="logout-btn">
+    Logout
+  </button>
+
+</div>
+
+<div class="admin-container">
+
+  <h2>Add Fish</h2>
+
+  <form id="addFishForm">
+
+    <input
+      type="text"
+      id="fishName"
+      placeholder="Fish Name"
+      required
+    />
+
+    <input
+      type="text"
+      id="fishPrice"
+      placeholder="Price"
+      required
+    />
+
+    <input
+      type="text"
+      id="fishImage"
+      placeholder="Image URL"
+      required
+    />
+
+    <textarea
+      id="fishDesc"
+      placeholder="Description"
+      required
+    ></textarea>
+
+    <button type="submit">
+      Add Fish
+    </button>
+
+  </form>
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+
+if(!localStorage.getItem("adminLoggedIn")){
+
+window.location.href = "login.html";
+
+}
+
+function logout(){
+
+localStorage.removeItem("adminLoggedIn");
+
+window.location.href = "login.html";
+
+}
+
+</script>
+
+</body>
+</html>
