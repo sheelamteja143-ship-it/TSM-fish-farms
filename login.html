@@ -1,115 +1,301 @@
-      ```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
 <title>TSM Fish Farms Login</title>
 
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+font-family:Arial,sans-serif;
+
 }
 
 body{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    background:linear-gradient(135deg,#0099ff,#00cc99);
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(
+135deg,
+#0099ff,
+#00cc99
+);
+
 }
 
 .login-box{
-    background:white;
-    padding:35px;
-    border-radius:15px;
-    width:350px;
-    box-shadow:0 0 20px rgba(0,0,0,0.2);
+
+background:#fff;
+
+width:350px;
+
+padding:35px;
+
+border-radius:15px;
+
+box-shadow:0 0 20px rgba(
+0,
+0,
+0,
+0.2
+);
+
 }
 
 .logo{
-    text-align:center;
-    margin-bottom:20px;
+
+text-align:center;
+
+margin-bottom:25px;
+
 }
 
 .logo h1{
-    color:#0099ff;
+
+color:#0099ff;
+
+margin-bottom:10px;
+
 }
 
 .logo p{
-    color:#666;
+
+color:#666;
+
+font-size:14px;
+
 }
 
 .input-box{
-    margin:15px 0;
+
+margin-bottom:18px;
+
 }
 
 .input-box input{
-    width:100%;
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:8px;
-    outline:none;
+
+width:100%;
+
+padding:12px;
+
+border:1px solid #ccc;
+
+border-radius:8px;
+
+outline:none;
+
+font-size:15px;
+
+}
+
+.input-box input:focus{
+
+border-color:#0099ff;
+
 }
 
 .login-btn{
-    width:100%;
-    padding:12px;
-    background:#0099ff;
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
+
+width:100%;
+
+padding:12px;
+
+border:none;
+
+border-radius:8px;
+
+background:#0099ff;
+
+color:white;
+
+font-size:16px;
+
+cursor:pointer;
+
 }
 
 .login-btn:hover{
-    background:#0077cc;
+
+background:#0077cc;
+
 }
 
 .links{
-    text-align:center;
-    margin-top:15px;
+
+text-align:center;
+
+margin-top:15px;
+
 }
 
 .links a{
-    text-decoration:none;
-    color:#0099ff;
+
+text-decoration:none;
+
+color:#0099ff;
+
+font-size:14px;
+
 }
+
 </style>
+
 </head>
 
 <body>
 
 <div class="login-box">
 
-    <div class="logo">
-        <h1>TSM Fish Farms</h1>
-        <p>Flowerhorns & Aquarium Fishes Store TSM Aqua Farms</p>
-    </div>
+<div class="logo">
 
-    <form>
-        <div class="input-box">
-            <input type="text" placeholder="Username" required>
-        </div>
+<h1>TSM Fish Farms</h1>
 
-        <div class="input-box">
-            <input type="password" placeholder="Password" required>
-        </div>
+<p>
 
-        <button class="login-btn">Login</button>
+Flowerhorns & Aquarium Fishes Store
 
-        <div class="links">
-            <p><a href="#">Forgot Password?</a></p>
-            <p><a href="#">Create Account</a></p>
-        </div>
-    </form>
+</p>
 
 </div>
 
+<form id="loginForm">
+
+<div class="input-box">
+
+<input
+type="text"
+id="username"
+placeholder="Username"
+required>
+
+</div>
+
+<div class="input-box">
+
+<input
+type="password"
+id="password"
+placeholder="Password"
+required>
+
+</div>
+
+<button
+type="submit"
+class="login-btn">
+
+Login
+
+</button>
+
+<div class="links">
+
+<p>
+
+<a href="#">
+
+Forgot Password?
+
+</a>
+
+</p>
+
+</div>
+
+</form>
+
+</div>
+
+<script>
+
+document
+.getElementById("loginForm")
+
+.addEventListener(
+
+"submit",
+
+function(e){
+
+e.preventDefault();
+
+const username =
+
+document
+.getElementById("username")
+.value;
+
+const password =
+
+document
+.getElementById("password")
+.value;
+
+if(
+
+username === "admin"
+
+&&
+
+password === "1234"
+
+){
+
+localStorage.setItem(
+
+"adminLoggedIn",
+
+"true"
+
+);
+
+alert(
+
+"Login Successful"
+
+);
+
+window.location.href =
+
+"admin.html";
+
+}
+
+else{
+
+alert(
+
+"Invalid Username or Password"
+
+);
+
+}
+
+}
+
+);
+
+</script>
+
 </body>
+
 </html>
-```
